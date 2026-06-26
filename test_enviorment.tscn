@@ -5,9 +5,29 @@
 [ext_resource type="PackedScene" uid="uid://dqckl8ty683mm" path="res://palm tree.tscn" id="2_5l3h6"]
 [ext_resource type="Texture2D" uid="uid://8gh3r2g4lsh8" path="res://1_tileset_italy (2).png" id="4_j620w"]
 [ext_resource type="Texture2D" uid="uid://dg78if73c3jme" path="res://9_barrier-tiled (1).png" id="5_bsuer"]
+[ext_resource type="Texture2D" uid="uid://btkscfe8hs51r" path="res://test1.png" id="6_lxb7j"]
+[ext_resource type="Texture2D" uid="uid://bklj0fmmsnbpd" path="res://test1_layer.png" id="7_bp6bo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_472e1"]
 size = Vector2(3345.5, 129)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_o5l5y"]
+a = Vector2(-881.9358, -577.08105)
+b = Vector2(-787.4971, -703.4734)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_1fkvy"]
+a = Vector2(-887.267, -701.8103)
+b = Vector2(-805.7755, -705.1365)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_472e1"]
+a = Vector2(-803.4907, -705.968)
+b = Vector2(49.50415, -699.3159)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o5l5y"]
+size = Vector2(63.21289, 37.125)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1fkvy"]
+size = Vector2(1926, 51.76657)
 
 [node name="test enviorment" type="Node2D" unique_id=870670723]
 position = Vector2(19, 47)
@@ -67,3 +87,45 @@ scale = Vector2(0.29991075, 0.25185186)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Barrier/StaticBody2D" unique_id=1268323930]
 position = Vector2(699.25006, 147.50002)
 shape = SubResource("RectangleShape2D_472e1")
+
+[node name="Test1" type="Sprite2D" parent="." unique_id=1983154475]
+position = Vector2(2193.0002, -1693.9999)
+scale = Vector2(1.315625, 1.2057291)
+texture = ExtResource("6_lxb7j")
+
+[node name="Test1Layer" type="Sprite2D" parent="." unique_id=2090882475]
+z_index = 1
+position = Vector2(2190.5, -1712.5)
+scale = Vector2(1.3130208, 1.2026042)
+texture = ExtResource("7_bp6bo")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Test1Layer" unique_id=689717555]
+position = Vector2(-6, 6)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Test1Layer/StaticBody2D" unique_id=420436959]
+position = Vector2(-71.302536, 1.8996116)
+shape = SubResource("SegmentShape2D_o5l5y")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Test1Layer/StaticBody2D/CollisionShape2D" unique_id=2081151193]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Test1Layer/StaticBody2D/CollisionShape2D/StaticBody2D" unique_id=572247948]
+shape = SubResource("SegmentShape2D_1fkvy")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Test1Layer/StaticBody2D/CollisionShape2D/StaticBody2D/CollisionShape2D" unique_id=194622557]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Test1Layer/StaticBody2D/CollisionShape2D/StaticBody2D/CollisionShape2D/StaticBody2D" unique_id=385439503]
+shape = SubResource("SegmentShape2D_472e1")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Test1Layer/StaticBody2D/CollisionShape2D/StaticBody2D/CollisionShape2D/StaticBody2D" unique_id=1419028461]
+position = Vector2(253, -803)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Test1Layer/StaticBody2D/CollisionShape2D/StaticBody2D/CollisionShape2D/StaticBody2D/StaticBody2D" unique_id=78293375]
+position = Vector2(9.37207, -0.5258789)
+shape = SubResource("RectangleShape2D_o5l5y")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Test1Layer/StaticBody2D/CollisionShape2D/StaticBody2D/CollisionShape2D/StaticBody2D/StaticBody2D/CollisionShape2D2" unique_id=1366114153]
+position = Vector2(8.229622, 3.0693078)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Test1Layer/StaticBody2D/CollisionShape2D/StaticBody2D/CollisionShape2D/StaticBody2D/StaticBody2D/CollisionShape2D2/StaticBody2D" unique_id=1582902889]
+position = Vector2(-200.5343, 1745.7991)
+shape = SubResource("RectangleShape2D_1fkvy")
