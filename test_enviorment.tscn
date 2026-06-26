@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://dc1mdgjp7fgf3"]
+
+[ext_resource type="PackedScene" uid="uid://6yfbgva0s6n0" path="res://marylin.tscn" id="1_4aa0p"]
+[ext_resource type="Texture2D" uid="uid://iv08uk1n7w06" path="res://tree object.png" id="2_5l3h6"]
+[ext_resource type="PackedScene" uid="uid://xe57rgrwejrk" path="res://tree_object.tscn" id="2_go4u4"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_472e1"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_1fkvy"]
+noise = SubResource("FastNoiseLite_472e1")
+
+[node name="test enviorment" type="Node2D" unique_id=870670723]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=825858822]
+position = Vector2(-12, 482)
+scale = Vector2(7.2539063, 2.1289065)
+texture = SubResource("NoiseTexture2D_1fkvy")
+
+[node name="Marylin" parent="." unique_id=1846269927 instance=ExtResource("1_4aa0p")]
+z_index = 1
+position = Vector2(-16, 521)
+
+[node name="above player" type="Node2D" parent="." unique_id=1299820430]
+z_index = 2
+position = Vector2(395, 811)
+
+[node name="TreeObject" parent="above player" unique_id=351831436 instance=ExtResource("2_go4u4")]
+position = Vector2(0, -293)
+
+[node name="TreeObject" parent="above player/TreeObject" unique_id=1378861196 instance=ExtResource("2_go4u4")]
+position = Vector2(-482, 955)
+
+[node name="below player" type="Node2D" parent="." unique_id=1349315234]
+position = Vector2(395, 811)
+
+[node name="TreeObject" type="Sprite2D" parent="below player" unique_id=1684684040]
+position = Vector2(-885, -318)
+scale = Vector2(0.9999999, 1)
+texture = ExtResource("2_5l3h6")

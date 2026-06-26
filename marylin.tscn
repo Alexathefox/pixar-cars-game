@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://6yfbgva0s6n0"]
+
+[ext_resource type="Script" uid="uid://bvyfue5i3v81b" path="res://marylin.gd" id="1_8ca7i"]
+[ext_resource type="Texture2D" uid="uid://crobwhddrftii" path="res://Marylin_Stickers_Ortho.png" id="2_1mdjg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o5l5y"]
+size = Vector2(158, 326)
+
+[node name="Marylin" type="CharacterBody2D" unique_id=1846269927]
+script = ExtResource("1_8ca7i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1732330754]
+position = Vector2(3, 1.1924868e-08)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_o5l5y")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=42791871]
+rotation = 1.5707964
+texture = ExtResource("2_1mdjg")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1572751279]
+position = Vector2(4, 0)
+position_smoothing_enabled = true
