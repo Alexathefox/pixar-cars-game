@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dqckl8ty683mm"]
+
+[ext_resource type="Texture2D" uid="uid://dn4ngiubmmb3k" path="res://1_tileset_italy.png" id="1_7x62t"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1fkvy"]
+radius = 37.919018
+
+[node name="Sprite2D" type="Sprite2D" unique_id=930626505]
+scale = Vector2(4.1140347, 4.4608693)
+texture = ExtResource("1_7x62t")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=828837455]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1654678269]
+shape = SubResource("CircleShape2D_1fkvy")

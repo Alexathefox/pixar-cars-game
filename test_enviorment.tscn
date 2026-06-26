@@ -1,20 +1,31 @@
 [gd_scene format=3 uid="uid://dc1mdgjp7fgf3"]
 
 [ext_resource type="PackedScene" uid="uid://6yfbgva0s6n0" path="res://marylin.tscn" id="1_4aa0p"]
-[ext_resource type="Texture2D" uid="uid://iv08uk1n7w06" path="res://tree object.png" id="2_5l3h6"]
-[ext_resource type="PackedScene" uid="uid://xe57rgrwejrk" path="res://tree_object.tscn" id="2_go4u4"]
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_472e1"]
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_1fkvy"]
-noise = SubResource("FastNoiseLite_472e1")
+[ext_resource type="Texture2D" uid="uid://dm5kjrnliweb3" path="res://1_tileset_italy (1).png" id="1_go4u4"]
+[ext_resource type="PackedScene" uid="uid://dqckl8ty683mm" path="res://palm tree.tscn" id="2_5l3h6"]
+[ext_resource type="Texture2D" uid="uid://8gh3r2g4lsh8" path="res://1_tileset_italy (2).png" id="4_j620w"]
 
 [node name="test enviorment" type="Node2D" unique_id=870670723]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=825858822]
-position = Vector2(-12, 482)
-scale = Vector2(7.2539063, 2.1289065)
-texture = SubResource("NoiseTexture2D_1fkvy")
+position = Vector2(-545.1826, 482)
+scale = Vector2(3.005439, 2.1289065)
+texture = ExtResource("1_go4u4")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D" unique_id=2063858150]
+position = Vector2(247.63687, 0.42723548)
+scale = Vector2(0.97585344, 1.0007304)
+texture = ExtResource("1_go4u4")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Sprite2D" unique_id=1549555885]
+position = Vector2(431.58255, 0.4484825)
+scale = Vector2(1.7734447, 1.0005683)
+texture = ExtResource("1_go4u4")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D/Sprite2D2" unique_id=94219099]
+position = Vector2(247.63687, 0.42723548)
+scale = Vector2(0.97585344, 1.0007304)
+texture = ExtResource("1_go4u4")
 
 [node name="Marylin" parent="." unique_id=1846269927 instance=ExtResource("1_4aa0p")]
 z_index = 1
@@ -24,16 +35,17 @@ position = Vector2(-16, 521)
 z_index = 2
 position = Vector2(395, 811)
 
-[node name="TreeObject" parent="above player" unique_id=351831436 instance=ExtResource("2_go4u4")]
-position = Vector2(0, -293)
-
-[node name="TreeObject" parent="above player/TreeObject" unique_id=1378861196 instance=ExtResource("2_go4u4")]
-position = Vector2(-482, 955)
+[node name="Sprite2D" parent="above player" unique_id=930626505 instance=ExtResource("2_5l3h6")]
+z_index = 1
+position = Vector2(-131, 69)
 
 [node name="below player" type="Node2D" parent="." unique_id=1349315234]
 position = Vector2(395, 811)
 
-[node name="TreeObject" type="Sprite2D" parent="below player" unique_id=1684684040]
-position = Vector2(-885, -318)
-scale = Vector2(0.9999999, 1)
-texture = ExtResource("2_5l3h6")
+[node name="dirt tile" type="Sprite2D" parent="below player" unique_id=405915911]
+position = Vector2(2600.0002, -330.99997)
+scale = Vector2(2.1447875, 2.1274903)
+texture = ExtResource("4_j620w")
+
+[node name="Sprite2D" parent="below player" unique_id=1586908676 instance=ExtResource("2_5l3h6")]
+position = Vector2(-1193.0001, -328)
