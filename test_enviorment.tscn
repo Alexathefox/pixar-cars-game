@@ -4,8 +4,13 @@
 [ext_resource type="Texture2D" uid="uid://dm5kjrnliweb3" path="res://1_tileset_italy (1).png" id="1_go4u4"]
 [ext_resource type="PackedScene" uid="uid://dqckl8ty683mm" path="res://palm tree.tscn" id="2_5l3h6"]
 [ext_resource type="Texture2D" uid="uid://8gh3r2g4lsh8" path="res://1_tileset_italy (2).png" id="4_j620w"]
+[ext_resource type="Texture2D" uid="uid://dg78if73c3jme" path="res://9_barrier-tiled (1).png" id="5_bsuer"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_472e1"]
+size = Vector2(3345.5, 129)
 
 [node name="test enviorment" type="Node2D" unique_id=870670723]
+position = Vector2(19, 47)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=825858822]
 position = Vector2(-545.1826, 482)
@@ -49,3 +54,16 @@ texture = ExtResource("4_j620w")
 
 [node name="Sprite2D" parent="below player" unique_id=1586908676 instance=ExtResource("2_5l3h6")]
 position = Vector2(-1193.0001, -328)
+
+[node name="Barrier" type="Sprite2D" parent="." unique_id=2114026080]
+position = Vector2(704.50006, 144)
+scale = Vector2(3.3343253, 3.9705882)
+texture = ExtResource("5_bsuer")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Barrier" unique_id=461665612]
+position = Vector2(-211.28714, -36.26667)
+scale = Vector2(0.29991075, 0.25185186)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Barrier/StaticBody2D" unique_id=1268323930]
+position = Vector2(699.25006, 147.50002)
+shape = SubResource("RectangleShape2D_472e1")
